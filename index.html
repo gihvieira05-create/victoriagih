@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanna Vieira</title>
+  <style>
+    /* ----- Reset básico ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cor-fundo: #fafaf9;
+      --cor-texto: #2b2b2b;
+      --cor-texto-suave: #6b6b6b;
+      --cor-destaque: #a3785f; /* tom terroso suave, combina com clean/minimalista */
+      --cor-linha: #e5e2df;
+      --fonte: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--fonte);
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.6;
+    }
+
+    /* ----- Cabeçalho / Navegação ----- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      border-bottom: 1px solid var(--cor-linha);
+      position: sticky;
+      top: 0;
+      background-color: var(--cor-fundo);
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--cor-texto);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--cor-destaque);
+    }
+
+    /* ----- Seções gerais ----- */
+    section {
+      padding: 80px 8%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background-color: var(--cor-destaque);
+      margin-top: 10px;
+    }
+
+    /* ----- Seção Hero (Sobre mim) ----- */
+    #sobre {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    #sobre p {
+      color: var(--cor-texto-suave);
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    #sobre .destaque {
+      color: var(--cor-destaque);
+      font-weight: 600;
+    }
+
+    /* ----- Cards (usados em Música e Cozinha) ----- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid var(--cor-linha);
+      border-radius: 8px;
+      padding: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--cor-destaque);
+    }
+
+    .card p {
+      color: var(--cor-texto-suave);
+      font-size: 0.95rem;
+    }
+
+    /* ----- Rodapé ----- */
+    footer {
+      text-align: center;
+      padding: 32px 8%;
+      border-top: 1px solid var(--cor-linha);
+      color: var(--cor-texto-suave);
+      font-size: 0.9rem;
+    }
+
+    /* ----- Responsividade ----- */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Giovanna Vieira</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#musica">Música</a></li>
+        <li><a href="#cozinha">Cozinha</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== SEÇÃO SOBRE MIM ===== -->
+  <section id="sobre">
+    <h2>Sobre mim</h2>
+    <p>
+      Oi, eu sou a <span class="destaque">Giovanna</span>! Tenho 14 anos, estudo no
+      9º ano e moro na zona leste de São Paulo. Nas horas livres gosto de ouvir
+      música, adoro cozinhar e também curto muito fazer penteados e cuidar do cabelo.
+      Esse site é um cantinho meu na internet para compartilhar um pouco do que eu gosto. ✨
+    </p>
+  </section>
+
+  <!-- ===== SEÇÃO MÚSICA ===== -->
+  <section id="musica">
+    <h2>Música</h2>
+    <p style="color: var(--cor-texto-suave);">
+      Aqui estão alguns dos meus gostos musicais. (Troque pelos seus artistas e estilos favoritos!)
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Estilo favorito</h3>
+        <p>Coloque aqui o gênero musical que você mais curte, tipo pop, sertanejo, funk, MPB...</p>
+      </div>
+      <div class="card">
+        <h3>Artista favorito</h3>
+        <p>Coloque aqui o nome do cantor(a) ou banda que você mais escuta.</p>
+      </div>
+      <div class="card">
+        <h3>Música do momento</h3>
+        <p>Coloque aqui aquela música que não sai da sua cabeça ultimamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO COZINHA ===== -->
+  <section id="cozinha">
+    <h2>Cozinha</h2>
+    <p style="color: var(--cor-texto-suave);">
+      Adoro cozinhar! Aqui vou compartilhar algumas receitas e dicas. (Substitua pelos seus pratos favoritos!)
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Receita favorita</h3>
+        <p>Descreva aqui o prato que você mais gosta de fazer.</p>
+      </div>
+      <div class="card">
+        <h3>Doce ou salgado?</h3>
+        <p>Conte se você prefere fazer doces, salgados ou os dois!</p>
+      </div>
+      <div class="card">
+        <h3>Dica de cozinha</h3>
+        <p>Compartilhe uma dica ou truque de cozinha que você aprendeu.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Giovanna Vieira — Feito com 💛</p>
+  </footer>
+
+</body>
+</html>
